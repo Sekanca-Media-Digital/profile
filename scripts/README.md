@@ -20,7 +20,7 @@ Variabel lingkungan (opsional):
 
 ```bash
 export PHP_VERSION=8.2
-export APP_DIR=/var/www/sekanca
+export APP_DIR=/root/apps/profile
 export INSTALL_NGINX=yes
 export INSTALL_MYSQL=no
 sudo -E bash install-server.sh
@@ -28,7 +28,7 @@ sudo -E bash install-server.sh
 
 ## 2. Deploy aplikasi
 
-Setelah kode ada di server (clone/upload ke `/var/www/sekanca`):
+Setelah kode ada di server (clone/upload ke `/root/apps/profile`):
 
 ```bash
 sudo bash deploy-app.sh
@@ -37,8 +37,8 @@ sudo bash deploy-app.sh
 Atau dari dalam folder project:
 
 ```bash
-cd /var/www/sekanca
-sudo APP_DIR=/var/www/sekanca bash scripts/deploy-app.sh
+cd /root/apps/profile
+sudo APP_DIR=/root/apps/profile bash scripts/deploy-app.sh
 ```
 
 Script akan: `composer install`, unduh binary RoadRunner (`rr`), `npm run build`, cache config/route/view.
@@ -48,7 +48,7 @@ Script akan: `composer install`, unduh binary RoadRunner (`rr`), `npm run build`
 Manual (untuk tes):
 
 ```bash
-cd /var/www/sekanca
+cd /root/apps/profile
 php artisan octane:start --host=0.0.0.0 --port=8000
 ```
 

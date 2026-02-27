@@ -7,7 +7,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
-APP_DIR="${APP_DIR:-/var/www/sekanca}"
+APP_DIR="${APP_DIR:-/root/apps/profile}"
 # Jika script di dalam repo (scripts/deploy-app.sh), gunakan parent sebagai APP_DIR
 if [[ -f "$SCRIPT_DIR/../artisan" ]]; then
     APP_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"

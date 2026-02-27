@@ -11,7 +11,7 @@ PHP_VERSION="${PHP_VERSION:-8.3}"
 NODE_VERSION="${NODE_VERSION:-20}"
 APP_USER="${APP_USER:-www-data}"
 APP_GROUP="${APP_GROUP:-www-data}"
-APP_DIR="${APP_DIR:-/var/www/sekanca}"
+APP_DIR="${APP_DIR:-/root/apps/profile}"
 INSTALL_NGINX="${INSTALL_NGINX:-yes}"
 INSTALL_MYSQL="${INSTALL_MYSQL:-no}"
 
