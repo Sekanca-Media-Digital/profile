@@ -46,12 +46,6 @@ else
     echo "[*] Binary rr sudah ada."
 fi
 
-# --- Frontend build ---
-if [[ -f package.json ]]; then
-    echo "[*] npm install & build..."
-    npm ci
-    npm run build
-fi
 
 # --- Laravel ---
 php artisan config:cache
