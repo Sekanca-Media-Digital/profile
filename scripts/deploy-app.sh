@@ -12,8 +12,8 @@ APP_DIR="${APP_DIR:-/root/apps/profile}"
 if [[ -f "$SCRIPT_DIR/../artisan" ]]; then
     APP_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 fi
-APP_USER="${APP_USER:-www-data}"
-APP_GROUP="${APP_GROUP:-www-data}"
+APP_USER="${APP_USER:-root}"
+APP_GROUP="${APP_GROUP:-root}"
 
 echo "[*] App directory: $APP_DIR"
 if [[ ! -f "$APP_DIR/artisan" ]]; then

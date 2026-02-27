@@ -8,8 +8,8 @@ After=network.target
 
 [Service]
 Type=simple
-User=www-data
-Group=www-data
+User=root
+Group=root
 WorkingDirectory=/root/apps/profile
 ExecStart=/usr/bin/php artisan octane:start --host=127.0.0.1 --port=8000
 Restart=on-failure
