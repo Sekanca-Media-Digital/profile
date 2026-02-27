@@ -1,0 +1,95 @@
+.gradient {
+    color: white;
+    background:
+    linear-gradient(315deg, rgba(245,158,11,0) 30%, #F59E0B 100%),
+    linear-gradient(40deg, rgba(51, 51, 51, 0) 30%, #515151 100%),
+    linear-gradient(225deg, rgba(250,173,20,0) 30%, #FAAD14 100%);
+}
+
+thead th {
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pc-navbar .navbar-nav{
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.choices__list--dropdown {
+    z-index: 9999 !important;
+}
+
+.pc-footer{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /* background: #aee2f0; */
+    margin-top: 100px !important;
+    padding-top: 25px;
+}
+
+
+
+.icon-select {
+    position: relative;
+    width: 300px;
+    font-family: Arial, sans-serif;
+}
+
+.icon-select button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-select .selected {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-select .dropdown {
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #fff;
+    display: none;
+    z-index: 99;
+}
+
+.icon-select input.search {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+}
+
+.icon-select .options {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.icon-select .option {
+    padding: 8px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-select .option:hover {
+    background: #f2f2f2;
+}
+
+.icon-item.active {
+    border-color: #206bc4;
+    background: #eaf2ff;
+}

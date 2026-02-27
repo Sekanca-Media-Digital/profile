@@ -1,0 +1,185 @@
+:root {
+    --primary: #F5A000;
+    --secondary: #1F4E6B;
+    --soft-bg: #FFF9ED;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--soft-bg);
+    scroll-behavior: smooth;
+}
+
+/* SEO Content */
+.seo-content {
+    font-size: 0.95rem;
+    color: #555;
+}
+.seo-content h2 { font-size: 1.25rem; font-weight: 600; color: var(--secondary); margin-bottom: 1rem; }
+.seo-content h3 { font-size: 1.1rem; font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; }
+.seo-content a { color: var(--primary); text-decoration: underline; }
+
+/* Navbar */
+.navbar {
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand span {
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.nav-link {
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(245, 160, 0, 0.60), rgba(31, 78, 107, 0.50)),
+        url("/assets/images/hero.webp") center/cover no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1 {
+    font-weight: 700;
+}
+
+.btn-primary-custom {
+    background: white;
+    color: var(--secondary);
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Section */
+section {
+    padding: 100px 0;
+}
+
+/* URL Checker - clear fixed navbar */
+.url-checker-section {
+    padding-top: 8rem !important;
+    padding-bottom: 3rem;
+}
+
+.url-checker-section .url-checker-form-inline .d-flex {
+    flex-wrap: nowrap;
+}
+
+@media (max-width: 576px) {
+    .url-checker-section .url-checker-form-inline .d-flex {
+        flex-wrap: wrap;
+    }
+    .url-checker-section .url-checker-form-inline .form-control {
+        min-width: 100%;
+    }
+}
+
+.section-title {
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+/* Card */
+.service-card {
+    border: none;
+    border-radius: 20px;
+    padding: 40px 30px;
+    transition: 0.4s;
+    background: white;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(245, 160, 0, 0.25);
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 30px;
+    padding: 80px 30px;
+}
+
+/* Hero */
+.page-hero {
+    background: linear-gradient(135deg, rgba(245, 160, 0, 0.95), rgba(31, 78, 107, 0.9));
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-weight: 700;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.service-box {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    transition: 0.4s;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(245, 160, 0, 0.25);
+}
+
+.service-icon {
+    font-size: 40px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.pricing-card {
+    border-radius: 20px;
+    padding: 40px;
+    background: white;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.pricing-card:hover {
+    transform: scale(1.05);
+}
+
+.btn-brand {
+    background: var(--primary);
+    color: white;
+    border-radius: 50px;
+    padding: 10px 30px;
+}
+
+.btn-brand:hover {
+    background: #d89000;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary);
+    color: white;
+    padding: 40px 0;
+}

@@ -1,0 +1,142 @@
+/* Poseidon Theme - Ocean / Blue aesthetic */
+:root {
+    --poseidon-primary: #0D9488;
+    --poseidon-secondary: #0F172A;
+    --poseidon-accent: #06B6D4;
+    --poseidon-light: #F0FDFA;
+    --poseidon-dark: #134E4A;
+}
+
+body.poseidon-theme {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--poseidon-light);
+    color: var(--poseidon-secondary);
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.poseidon-navbar {
+    background: rgba(13, 148, 136, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(13, 148, 136, 0.2);
+}
+
+.poseidon-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 500;
+}
+
+.poseidon-navbar .nav-link:hover {
+    color: white !important;
+}
+
+.poseidon-navbar .dropdown-menu {
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.btn-cta-poseidon {
+    background: white !important;
+    color: var(--poseidon-primary) !important;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-cta-poseidon:hover {
+    background: var(--poseidon-accent) !important;
+    color: white !important;
+}
+
+/* Hero */
+.poseidon-hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.9), rgba(6, 182, 212, 0.8)),
+        url("/assets/images/hero.webp") center/cover no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.poseidon-hero-title {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.poseidon-hero-subtitle {
+    opacity: 0.95;
+}
+
+.poseidon-hero-sm {
+    min-height: 50vh;
+}
+
+/* About */
+.poseidon-about {
+    background: white;
+}
+
+.poseidon-about .section-title {
+    color: var(--poseidon-secondary);
+}
+
+/* Services */
+.poseidon-services {
+    background: var(--poseidon-light);
+}
+
+.poseidon-services .section-title {
+    color: var(--poseidon-secondary);
+}
+
+.poseidon-service-card {
+    border-radius: 16px !important;
+    transition: 0.3s;
+}
+
+.poseidon-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(13, 148, 136, 0.15) !important;
+}
+
+.poseidon-accent {
+    color: var(--poseidon-primary) !important;
+}
+
+.poseidon-icon {
+    font-size: 2.5rem;
+}
+
+/* CTA */
+.poseidon-cta-box {
+    background: linear-gradient(135deg, var(--poseidon-primary), var(--poseidon-accent));
+    color: white;
+}
+
+/* Footer */
+.poseidon-footer {
+    background: var(--poseidon-secondary);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Section spacing */
+.poseidon-theme section {
+    padding: 80px 0;
+}
+
+/* URL Checker - clear fixed navbar */
+.poseidon-theme .url-checker-section {
+    padding-top: 8rem !important;
+    padding-bottom: 3rem;
+}
+
+/* SEO Content */
+.poseidon-theme .seo-content {
+    font-size: 0.95rem;
+    color: #555;
+}
+.poseidon-theme .seo-content h2 { font-size: 1.25rem; font-weight: 600; color: var(--poseidon-secondary); margin-bottom: 1rem; }
+.poseidon-theme .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; }
+.poseidon-theme .seo-content a { color: var(--poseidon-primary); }
