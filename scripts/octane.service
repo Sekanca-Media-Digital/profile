@@ -1,0 +1,22 @@
+# Systemd unit untuk Laravel Octane (RoadRunner)
+# Pasang: sudo cp scripts/octane.service /etc/systemd/system/
+#        sudo systemctl daemon-reload && sudo systemctl enable octane && sudo systemctl start octane
+
+[Unit]
+Description=Laravel Octane (RoadRunner)
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/sekanca
+ExecStart=/usr/bin/php artisan octane:start --host=127.0.0.1 --port=8000
+Restart=on-failure
+RestartSec=3
+
+# Environment
+Environment="APP_ENV=production"
+
+[Install]
+WantedBy=multi-user.target
