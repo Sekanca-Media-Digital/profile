@@ -1,6 +1,8 @@
 # Systemd unit untuk Laravel Octane (RoadRunner)
 # Pasang: sudo cp scripts/octane.service /etc/systemd/system/
 #        sudo systemctl daemon-reload && sudo systemctl enable octane && sudo systemctl start octane
+#
+# Reload (rebuild rr + reload workers): sudo systemctl reload octane
 
 [Unit]
 Description=Laravel Octane (RoadRunner)
@@ -12,6 +14,9 @@ User=root
 Group=root
 WorkingDirectory=/root/apps/profile
 ExecStart=/usr/bin/php artisan octane:start --host=127.0.0.1 --port=8000
+# Setiap reload: rebuild binary RoadRunner lalu reload worker Octane
+ExecReload=/usr/bin/php vendor/bin/rr get-binary -n
+ExecReload=/usr/bin/php artisan octane:reload
 Restart=on-failure
 RestartSec=3
 

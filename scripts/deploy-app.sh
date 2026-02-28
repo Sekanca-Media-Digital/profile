@@ -47,7 +47,12 @@ else
 fi
 
 
-# --- Laravel ---
+# --- Laravel: clear dulu agar perubahan .env dan kode terbaca, lalu cache lagi ---
+echo "[*] Clear & rebuild cache..."
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+php artisan cache:clear
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
@@ -67,13 +72,17 @@ if grep -q "DB_CONNECTION=sqlite" .env 2>/dev/null; then
     fi
 fi
 
+# --- Reload Octane agar kode & config terbaru dipakai (wajib di production) ---
+echo "[*] Reload Octane..."
+if php artisan octane:reload 2>/dev/null; then
+    echo "[✓] Octane di-reload."
+elif systemctl is-active --quiet octane 2>/dev/null; then
+    systemctl restart octane
+    echo "[✓] Octane di-restart (systemd)."
+else
+    echo "[!] Octane tidak berjalan. Jalankan: php artisan octane:start atau systemctl start octane"
+fi
+
 echo ""
 echo "[✓] Deploy selesai."
-echo ""
-echo "Jalankan Octane (RoadRunner):"
-echo "  cd $APP_DIR && php artisan octane:start --host=0.0.0.0 --port=8000"
-echo ""
-echo "Atau pasang systemd dan jalankan: systemctl start octane"
-echo "  sudo cp scripts/octane.service /etc/systemd/system/"
-echo "  sudo systemctl daemon-reload && sudo systemctl enable octane"
 echo ""

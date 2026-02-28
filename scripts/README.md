@@ -41,7 +41,7 @@ cd /root/apps/profile
 sudo APP_DIR=/root/apps/profile bash scripts/deploy-app.sh
 ```
 
-Script akan: `composer install`, unduh binary RoadRunner (`rr`), `npm run build`, cache config/route/view.
+Script akan: `composer install`, unduh binary RoadRunner (`rr`), `npm run build`, clear + cache config/route/view, lalu **reload/restart Octane** agar perubahan langsung dipakai di production.
 
 ## 3. Jalankan Octane
 
@@ -63,4 +63,15 @@ sudo systemctl start octane
 sudo systemctl status octane
 ```
 
+**Reload (rebuild binary RoadRunner + reload worker):**
+```bash
+sudo systemctl reload octane
+```
+Setiap `reload` akan menjalankan `rr get-binary -n` lalu `octane:reload`. Binary rr terbaru dipakai saat service di-restart berikutnya.
+
 Nginx sudah dikonfigurasi proxy ke `127.0.0.1:8000`. Akses aplikasi via HTTP port 80.
+
+**Kenapa di production tidak ter-update?** Octane menyimpan aplikasi di memori. Setelah deploy (git pull / upload kode baru), wajib **reload Octane** agar kode & config terbaru dipakai:
+- Jalankan ulang script deploy: `sudo bash deploy-app.sh` (sudah ada reload di dalamnya), atau
+- Manual: `cd /root/apps/profile && php artisan octane:reload` atau `sudo systemctl restart octane`
+- Sebaiknya juga: `php artisan config:clear && php artisan config:cache` (lalu reload Octane).
