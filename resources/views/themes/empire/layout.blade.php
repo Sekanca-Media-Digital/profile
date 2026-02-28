@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @include('partials.lcp-resources')
     @include('partials.gtm')
     @include('partials.meta')
 
@@ -16,14 +17,15 @@
     ]) !!}
     </script>
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 (critical for LCP layout) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- AOS (non-critical: load async to avoid blocking LCP) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"></noscript>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Font (display=swap already avoids FOIT) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
     <link href="{{ asset(config('app.theme') . 'css/style.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -33,7 +35,7 @@
 <nav class="navbar navbar-expand-lg fixed-top mb-5">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
-            <img src="{{ $site['logo'] ?? asset('assets/images/logo.webp') }}" height="80" class="me-2" alt="{{ $site['name'] ?? '' }}">
+            <img src="{{ $site['logo'] ?? asset('assets/images/logo.webp') }}" height="80" width="160" class="me-2" alt="{{ $site['name'] ?? '' }}" fetchpriority="high" decoding="async" style="object-fit:contain">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Buka menu navigasi">
@@ -75,13 +77,12 @@
     </div>
 </footer>
 
-<!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<!-- JS (defer to not block parsing) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
 <script>
-    AOS.init({
-        duration: 1000,
-        once: true
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.AOS) AOS.init({ duration: 1000, once: true });
     });
 </script>
 
