@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @include('partials.gtm')
     @include('partials.meta')
 
     {{-- JSON-LD WebSite (Google structured data) --}}
@@ -26,6 +27,7 @@
     <link href="{{ asset(config('app.theme') . 'css/style.css') }}" rel="stylesheet">
 </head>
 <body>
+@include('partials.gtm-noscript')
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top mb-5">
