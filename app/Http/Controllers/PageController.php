@@ -117,6 +117,26 @@ class PageController extends Controller
         return response()->json(['success' => true, 'html' => $html]);
     }
 
+    /**
+     * IP publik pengunjung (seperti ifconfig.me).
+     * Pakai X-Forwarded-For / X-Real-IP bila ada proxy (Nginx, Cloudflare, dll).
+     */
+    private function getClientPublicIp(Request $request): ?string
+    {
+        $forwarded = $request->header('X-Forwarded-For');
+        if ($forwarded) {
+            $ips = array_map('trim', explode(',', $forwarded));
+
+            return $ips[0] ?: null;
+        }
+        $realIp = $request->header('X-Real-IP');
+        if ($realIp) {
+            return trim($realIp);
+        }
+
+        return $request->ip();
+    }
+
     /** Tab slug (URL) -> check key (internal). */
     private const URL_CHECKER_TABS = [
         'ip-info' => 'ip_info',
@@ -140,7 +160,7 @@ class PageController extends Controller
                 'keywords' => 'url checker, cek url, website checker, dns checker, whois, ping',
                 'canonical' => route('url-checker'),
             ],
-            'userIp' => $request->ip(),
+            'userIp' => $this->getClientPublicIp($request),
             'results' => null,
             'checkedUrl' => null,
             'activeTab' => null,
@@ -161,7 +181,7 @@ class PageController extends Controller
 
         return view(config('app.theme') . 'url-checker', [
             'meta' => $meta,
-            'userIp' => $request->ip(),
+            'userIp' => $this->getClientPublicIp($request),
             'results' => null,
             'checkedUrl' => null,
             'activeTab' => $checkKey,
@@ -226,7 +246,7 @@ class PageController extends Controller
                 'keywords' => 'url checker, cek url, website checker, dns checker, whois, ping',
                 'canonical' => route('url-checker'),
             ],
-            'userIp' => $request->ip(),
+            'userIp' => $this->getClientPublicIp($request),
             'results' => $results,
             'checkedUrl' => $url,
             'activeTab' => $this->getActiveTabFromRequest($request),
