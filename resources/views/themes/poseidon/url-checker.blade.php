@@ -8,8 +8,8 @@
                 <div class="poseidon-service-card card border-0 shadow-sm">
                     <div class="card-body p-5">
                         <h1 class="h4 mb-3 poseidon-accent">URL Checker</h1>
-                        @if(isset($networkIp))
-                            <p class="small text-muted mb-3">IP Network: <code>{{ $networkIp }}</code></p>
+                        @if(isset($userIp))
+                            <p class="small text-muted mb-3">IP Anda: <code>{{ $userIp }}</code></p>
                         @endif
                         <form id="urlCheckerForm" action="{{ route('url-checker.check') }}" method="POST" class="mb-4">
                             @csrf

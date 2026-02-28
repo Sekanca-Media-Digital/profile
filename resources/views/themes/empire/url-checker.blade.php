@@ -7,8 +7,8 @@
             <div class="col-lg-10" data-aos="fade-up">
                 <div class="service-box p-4">
                     <h1 class="h4 mb-3">URL Checker</h1>
-                    @if(isset($networkIp))
-                        <p class="small text-muted mb-3">IP Network: <code>{{ $networkIp }}</code></p>
+                    @if(isset($userIp))
+                        <p class="small text-muted mb-3">IP Anda: <code>{{ $userIp }}</code></p>
                     @endif
                     <form id="urlCheckerForm" action="{{ route('url-checker.check') }}" method="POST" class="mb-4 url-checker-form-inline">
                         @csrf

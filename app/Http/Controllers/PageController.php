@@ -140,7 +140,7 @@ class PageController extends Controller
                 'keywords' => 'url checker, cek url, website checker, dns checker, whois, ping',
                 'canonical' => route('url-checker'),
             ],
-            'networkIp' => $this->urlCheckerService->getNetworkIp(),
+            'userIp' => $request->ip(),
             'results' => null,
             'checkedUrl' => null,
             'activeTab' => null,
@@ -149,7 +149,7 @@ class PageController extends Controller
         ]);
     }
 
-    public function urlCheckerTab(string $tab)
+    public function urlCheckerTab(Request $request, string $tab)
     {
         $site = $this->siteService->getGlobal();
         $checkKey = self::URL_CHECKER_TABS[$tab] ?? null;
@@ -161,7 +161,7 @@ class PageController extends Controller
 
         return view(config('app.theme') . 'url-checker', [
             'meta' => $meta,
-            'networkIp' => $this->urlCheckerService->getNetworkIp(),
+            'userIp' => $request->ip(),
             'results' => null,
             'checkedUrl' => null,
             'activeTab' => $checkKey,
@@ -226,7 +226,7 @@ class PageController extends Controller
                 'keywords' => 'url checker, cek url, website checker, dns checker, whois, ping',
                 'canonical' => route('url-checker'),
             ],
-            'networkIp' => $this->urlCheckerService->getNetworkIp(),
+            'userIp' => $request->ip(),
             'results' => $results,
             'checkedUrl' => $url,
             'activeTab' => $this->getActiveTabFromRequest($request),
