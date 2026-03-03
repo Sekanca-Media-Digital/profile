@@ -33,6 +33,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Model::automaticallyEagerLoadRelationships(true);
 
+        if (config('app.https_enabled')) {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
+
         View::composer('themes.*.layout', LayoutComposer::class);
     }
 }

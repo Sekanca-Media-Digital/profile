@@ -16,6 +16,7 @@ return [
     'name' => env('APP_NAME', 'Laravel'),
     'theme' => 'themes/' . strtolower(env('THEME', 'empire')) . '/',
     'whatsapp' => preg_replace('/[^0-9]/', '', env('WHATSAPP_NUMBER', '6285890338884')),
+    'https_enabled' => filter_var(env('HTTPS_ENABLED', false), FILTER_VALIDATE_BOOLEAN),
 
     /*
     |--------------------------------------------------------------------------

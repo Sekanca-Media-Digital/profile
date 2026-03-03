@@ -45,7 +45,7 @@
         });
         btn.disabled = true;
 
-        var base = '{{ route("url-checker.run-check") }}';
+        var base = '{{ route("url-checker.run-check", [], false) }}';
         await Promise.all(checks.map(function(check) {
             return fetch(base + '?url=' + encodeURIComponent(url) + '&check=' + encodeURIComponent(check))
                 .then(function(r) { return r.json(); })
