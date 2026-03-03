@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Page Hero -->
-<section class="poseidon-hero poseidon-hero-sm text-center py-5">
+<section class="poseidon-hero poseidon-hero-sm text-center">
     <div class="container" data-aos="fade-up">
         <h1 class="display-5 fw-bold">{{ $about['title'] }}</h1>
         <p class="lead mt-3">{{ $about['description'] }}</p>

@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Page Hero -->
-<section class="page-hero mt-5">
+<section class="page-hero">
     <div class="container" data-aos="fade-up">
         <h1 class="display-5">Layanan Profesional Kami</h1>
         <p class="lead mt-3">{{ $description }}</p>

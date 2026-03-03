@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Breadcrumb -->
-<nav class="container mt-5 pt-5" aria-label="breadcrumb">
+<nav class="container" aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('home') }}">Beranda</a></li>
         <li class="breadcrumb-item"><a href="{{ route('service.index') }}">Layanan</a></li>
