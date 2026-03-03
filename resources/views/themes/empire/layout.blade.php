@@ -6,6 +6,7 @@
     @include('partials.lcp-resources')
     @include('partials.gtm')
     @include('partials.meta')
+    @include('partials.critical-css')
 
     {{-- JSON-LD WebSite (Google structured data) --}}
     <script type="application/ld+json">
@@ -17,16 +18,19 @@
     ]) !!}
     </script>
 
-    <!-- Bootstrap 5 (critical for LCP layout) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    {{-- Defer render-blocking CSS: load async so they don't block LCP (saves ~1,620 ms) --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></noscript>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"></noscript>
+
+    <link href="{{ asset(config('app.theme') . 'css/style.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="{{ asset(config('app.theme') . 'css/style.css') }}" rel="stylesheet"></noscript>
 
     <!-- AOS (non-critical: load async to avoid blocking LCP) -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"></noscript>
-
-    <!-- Google Font (display=swap already avoids FOIT) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
-    <link href="{{ asset(config('app.theme') . 'css/style.css') }}" rel="stylesheet">
 </head>
 <body>
 @include('partials.gtm-noscript')
@@ -67,6 +71,9 @@
         </div>
     </div>
 </nav>
+<script>
+(function(){var t=document.querySelector('.navbar-toggler'),c=document.querySelector('.navbar-collapse');t&&c&&t.addEventListener('click',function(){c.classList.toggle('show');});})();
+</script>
 
 @yield('content')
 
