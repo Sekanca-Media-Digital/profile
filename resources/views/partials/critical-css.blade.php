@@ -32,5 +32,5 @@ body.poseidon-theme{background:#F0FDFA;color:#0F172A;scroll-behavior:smooth}
 .poseidon-navbar{background:rgba(13,148,136,.95);box-shadow:0 4px 20px rgba(13,148,136,.2)}
 .poseidon-navbar .nav-link{color:rgba(255,255,255,.95)!important;font-weight:500}
 {{-- Konten mulai di bawah navbar fixed (semua halaman) --}}
-.content-below-nav{padding-top:7rem}
+.content-below-nav{padding-top:6rem}
 </style>

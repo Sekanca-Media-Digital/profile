@@ -3,7 +3,7 @@
 @section('content')
 <!-- Page Hero -->
 <section class="poseidon-hero poseidon-hero-sm text-center py-5">
-    <div class="container pt-5 mt-5" data-aos="fade-up">
+    <div class="container" data-aos="fade-up">
         <h1 class="display-5 fw-bold">Layanan Profesional Kami</h1>
         <p class="lead mt-3">{{ $description }}</p>
     </div>

@@ -12,7 +12,7 @@
 
 <!-- Page Hero -->
 <section class="poseidon-hero poseidon-hero-sm text-center py-5">
-    <div class="container pt-5 mt-5" data-aos="fade-up">
+    <div class="container" data-aos="fade-up">
         <h1 class="display-5 fw-bold">{{ $service['title'] }}</h1>
     </div>
 </section>
