@@ -176,7 +176,7 @@
             loadingEl.classList.add('d-flex');
         }
 
-        fetch('{{ parse_url(route("landing-page-builder.generate"), PHP_URL_PATH) }}', {
+        fetch('{{ route("landing-page-builder.generate", [], false) }}', {
             method: 'POST',
             body: buildFormData(),
             headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json', 'X-CSRF-TOKEN': csrf }
