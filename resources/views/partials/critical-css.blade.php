@@ -1,7 +1,7 @@
-{{-- Minimal critical CSS so deferred stylesheets don't cause major FOUC. Keeps LCP fast. --}}
+{{-- Minimal critical CSS so deferred stylesheets don't cause major FOUC. Hero dimensions prevent CLS (~1.0). --}}
 <style>
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size-adjust:0.48}
 .container{width:100%;max-width:1140px;margin-left:auto;margin-right:auto;padding-left:12px;padding-right:12px}
 .navbar{display:flex;flex-wrap:wrap;align-items:center;min-height:56px;padding:.5rem 0}
 .navbar-brand{display:inline-flex;align-items:center;text-decoration:none;color:inherit;font-weight:700}
@@ -19,6 +19,10 @@ body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',
 @media (min-width:992px){
 .navbar-collapse{display:flex!important}
 }
+{{-- Hero: reserve space from first paint to avoid CLS when full CSS loads --}}
+.hero,.poseidon-hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero{color:#fff;background:linear-gradient(135deg,rgba(245,160,0,.6),rgba(31,78,107,.5))}
+.poseidon-hero{color:#fff;background:linear-gradient(135deg,rgba(13,148,136,.9),rgba(6,182,212,.8))}
 {{-- Empire theme above-the-fold --}}
 body:not(.poseidon-theme){background:#FFF9ED;scroll-behavior:smooth}
 .navbar:not(.poseidon-navbar){background:#fff;box-shadow:0 5px 20px rgba(0,0,0,.05)}

@@ -1,9 +1,9 @@
 @extends('themes.poseidon.layout')
 @section('content')
 
-<!-- Hero -->
+<!-- Hero (no AOS here to avoid CLS; content visible from first paint) -->
 <section class="poseidon-hero text-center py-5">
-    <div class="container pt-5 mt-5" data-aos="fade-up">
+    <div class="container pt-5 mt-5">
         <h1 class="display-4 fw-bold poseidon-hero-title">Digital Innovation for Modern Business</h1>
         <p class="lead mt-3 poseidon-hero-subtitle">Kami membantu bisnis berkembang dengan solusi digital kreatif dan profesional.</p>
         <a href="https://wa.me/{{ config('app.whatsapp') }}" target="_blank" rel="noopener" class="btn btn-cta-poseidon btn-lg mt-4">Coba Layanan</a>
