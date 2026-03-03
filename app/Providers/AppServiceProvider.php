@@ -9,6 +9,7 @@ use App\Services\SiteService;
 use App\Services\UrlCheckerService;
 use App\View\Composers\LayoutComposer;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -34,5 +35,9 @@ class AppServiceProvider extends ServiceProvider
         Model::automaticallyEagerLoadRelationships(true);
 
         View::composer('themes.*.layout', LayoutComposer::class);
+
+        if (config('app.env') === 'production' || str_starts_with(config('app.url'), 'https://')) {
+            URL::forceScheme('https');
+        }
     }
 }

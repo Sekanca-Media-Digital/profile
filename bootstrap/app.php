@@ -11,6 +11,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->trustProxies(at: '*');
+        $middleware->prepend(\App\Http\Middleware\ForceHttps::class);
         // $middleware->use([
         //     \App\Http\Middleware\RoleMiddleware::class,
         // ]);
