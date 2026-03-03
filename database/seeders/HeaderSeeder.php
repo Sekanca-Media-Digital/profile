@@ -2,10 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Header;
-use DateTime;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class HeaderSeeder extends Seeder
@@ -20,7 +17,7 @@ class HeaderSeeder extends Seeder
             [
                 'name' => 'Sekanca Media Digital',
                 'summary' => 'Software House – Digital Solution for Modern Business',
-                'image' => 'landing/bg-mockup-theme-1.png',
+                'image' => '',
                 'status' => 'active',
                 'type' => 'home',
             ],

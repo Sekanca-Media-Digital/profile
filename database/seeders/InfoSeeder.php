@@ -2,10 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Info;
-use DateTime;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class InfoSeeder extends Seeder
@@ -45,7 +42,7 @@ class InfoSeeder extends Seeder
             [
                 'name' => 'Design Source Files',
                 'summary' => 'All design source files are included in the package for easy customization.',
-                'image' => 'landing/img-demo1.jpg',
+                'image' => '',
                 'type' => 'product', //about, product, service
                 'icon' => 'folder',
                 'status' => 'active',
@@ -53,7 +50,7 @@ class InfoSeeder extends Seeder
             [
                 'name' => 'Components and Pages',
                 'summary' => 'A wide variety of pre-built components and pages to accelerate development.',
-                'image' => 'landing/img-demo2.jpg',
+                'image' => '',
                 'type' => 'product', //about, product, service
                 'icon' => 'layers',
                 'status' => 'active',
@@ -61,7 +58,7 @@ class InfoSeeder extends Seeder
             [
                 'name' => 'Documentation and Support',
                 'summary' => 'Comprehensive documentation and dedicated support to help you make the most of our product.',
-                'image' => 'http://localhost:8081/public/assets/images/landing/img-demo2.jpg',
+                'image' => '',
                 'type' => 'product', //about, product, service
                 'icon' => 'support',
                 'status' => 'active',

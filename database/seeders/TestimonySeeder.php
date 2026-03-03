@@ -2,10 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Testimony;
-use DateTime;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class TestimonySeeder extends Seeder

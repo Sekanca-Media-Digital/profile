@@ -2,10 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Profile;
-use DateTime;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ProfileSeeder extends Seeder
