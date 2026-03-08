@@ -23,6 +23,14 @@ fi
 
 cd "$APP_DIR"
 
+# --- Git pull ---
+if [[ -d .git ]]; then
+    echo "[*] Git pull..."
+    git pull
+else
+    echo "[*] Bukan repo git, skip git pull."
+fi
+
 # --- .env ---
 if [[ ! -f .env ]]; then
     echo "[*] Buat .env dari .env.example..."

@@ -14,6 +14,7 @@ Route::get('/robots.txt', function () {
 Route::get('/sitemap.xml', function () {
     $base = rtrim(url('/'), '/');
     $urlCheckerTabs = ['ip-info', 'ping', 'ping-global', 'http', 'dns', 'redirect', 'tcp-port', 'whois'];
+    $serviceSlugs = ['security-as-a-service', 'digital-marketing', 'social-media-marketing'];
     $pages = [
         ['url' => $base . '/', 'priority' => '1.0', 'changefreq' => 'weekly'],
         ['url' => $base . '/about', 'priority' => '0.8', 'changefreq' => 'monthly'],
@@ -23,6 +24,9 @@ Route::get('/sitemap.xml', function () {
         ['url' => $base . '/landing-page-builder', 'priority' => '0.8', 'changefreq' => 'monthly'],
         ['url' => $base . '/url-checker', 'priority' => '0.8', 'changefreq' => 'monthly'],
     ];
+    foreach ($serviceSlugs as $slug) {
+        $pages[] = ['url' => $base . '/service/' . $slug, 'priority' => '0.85', 'changefreq' => 'monthly'];
+    }
     foreach ($urlCheckerTabs as $tab) {
         $pages[] = ['url' => $base . '/url-checker/' . $tab, 'priority' => '0.7', 'changefreq' => 'monthly'];
     }

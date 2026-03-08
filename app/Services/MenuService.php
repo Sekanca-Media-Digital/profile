@@ -14,15 +14,7 @@ class MenuService
             ['label' => 'Beranda', 'route' => 'home', 'type' => 'link'],
             ['label' => 'Tentang Kami', 'route' => 'about', 'type' => 'link'],
             ['label' => 'Layanan', 'route' => 'service.index', 'type' => 'link'],
-            [
-                'label' => 'Career',
-                'type' => 'dropdown',
-                'items' => [
-                    ['label' => 'Halaman Career', 'route' => 'career', 'disabled' => false],
-                    ['label' => 'Lihat Lowongan di Loker.id', 'url' => 'https://www.loker.id/profile/sekanca-media-digital', 'external' => true, 'disabled' => false],
-                    ['label' => 'Profil Glints', 'url' => 'https://glints.com/companies/sekanca-media-digital/a36cc466-518b-403a-a58b-181eec54ee90', 'external' => true, 'disabled' => false],
-                ],
-            ],
+            ['label' => 'Career', 'route' => 'career', 'type' => 'link'],
             [
                 'label' => 'Tools',
                 'type' => 'dropdown',
