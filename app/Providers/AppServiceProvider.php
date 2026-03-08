@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\CareerService;
 use App\Services\HomePageService;
 use App\Services\MenuService;
 use App\Services\SeoContentService;
@@ -20,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(MenuService::class);
+        $this->app->singleton(CareerService::class);
         $this->app->singleton(SiteService::class);
         $this->app->singleton(HomePageService::class);
         $this->app->singleton(UrlCheckerService::class);

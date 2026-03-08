@@ -17,6 +17,7 @@ Route::get('/sitemap.xml', function () {
     $pages = [
         ['url' => $base . '/', 'priority' => '1.0', 'changefreq' => 'weekly'],
         ['url' => $base . '/about', 'priority' => '0.8', 'changefreq' => 'monthly'],
+        ['url' => $base . '/career', 'priority' => '0.8', 'changefreq' => 'monthly'],
         ['url' => $base . '/contact', 'priority' => '0.8', 'changefreq' => 'monthly'],
         ['url' => $base . '/service', 'priority' => '0.9', 'changefreq' => 'weekly'],
         ['url' => $base . '/landing-page-builder', 'priority' => '0.8', 'changefreq' => 'monthly'],
@@ -37,6 +38,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/service', [HomeController::class, 'service'])->name('service.index');
 Route::get('/service/{slug}', [HomeController::class, 'serviceDetail'])->name('service.show');
 Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/career', [PageController::class, 'career'])->name('career');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/landing-page-builder', [PageController::class, 'landingPageBuilder'])->name('landing-page-builder');
 Route::post('/landing-page-builder/generate', [PageController::class, 'landingPageBuilderGenerate'])->name('landing-page-builder.generate');

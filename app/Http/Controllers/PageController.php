@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Services\CareerService;
 use App\Services\HomePageService;
 use App\Services\LandingPageBuilderService;
 use App\Services\SeoContentService;
@@ -13,6 +14,7 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function __construct(
+        private CareerService $careerService,
         private HomePageService $homePageService,
         private SiteService $siteService,
         private UrlCheckerService $urlCheckerService,
@@ -33,6 +35,27 @@ class PageController extends Controller
             ],
             'about' => $data['about'],
             'seoContent' => $this->seoContentService->getContent('about'),
+        ]);
+    }
+
+    public function career()
+    {
+        $site = $this->siteService->getGlobal();
+        $jobs = $this->careerService->getJobListings();
+        $lokerUrl = $this->careerService->getLokerProfileUrl();
+        $glintsUrl = $this->careerService->getGlintsProfileUrl();
+
+        return view(config('app.theme') . 'career', [
+            'meta' => [
+                'title' => 'Career | ' . $site['name'],
+                'description' => 'Bergabung dengan tim Sekanca Media Digital. Lowongan tersedia: IT Staff IT Support CCTV, Finance & Accounting. Lamar melalui Loker.id.',
+                'keywords' => 'career sekanca, lowongan kerja digital agency, karir digital marketing',
+                'canonical' => route('career'),
+            ],
+            'jobs' => $jobs,
+            'lokerUrl' => $lokerUrl,
+            'glintsUrl' => $glintsUrl,
+            'seoContent' => $this->seoContentService->getContent('career'),
         ]);
     }
 

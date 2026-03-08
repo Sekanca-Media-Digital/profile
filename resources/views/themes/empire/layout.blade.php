@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></noscript>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 
     <link href="{{ asset(config('app.theme') . 'css/style.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="{{ asset(config('app.theme') . 'css/style.css') }}" rel="stylesheet"></noscript>
@@ -54,7 +54,7 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ $item['label'] }}</a>
                             <ul class="dropdown-menu">
                                 @foreach($item['items'] ?? [] as $sub)
-                                    <li><a class="dropdown-item {{ ($sub['disabled'] ?? false) ? 'disabled' : '' }}" href="{{ $sub['url'] ?? '#' }}">{{ $sub['label'] }}</a></li>
+                                    <li><a class="dropdown-item {{ ($sub['disabled'] ?? false) ? 'disabled' : '' }}" href="{{ $sub['url'] ?? '#' }}" @if($sub['external'] ?? false) target="_blank" rel="noopener" @endif>{{ $sub['label'] }}</a></li>
                                 @endforeach
                             </ul>
                         </li>

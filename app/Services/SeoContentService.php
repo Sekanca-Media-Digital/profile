@@ -31,6 +31,7 @@ class SeoContentService
             'about' => $this->getAboutBlocks(),
             'service' => $this->getServiceListBlocks(),
             'service-detail' => $this->getServiceDetailBlocks($context),
+            'career' => $this->getCareerBlocks(),
             'contact' => $this->getContactBlocks(),
             'landing-page-builder' => $this->getLandingPageBuilderBlocks(),
             'url-checker' => isset($context['tab']) ? $this->getUrlCheckerTabBlocks($context['tab']) : $this->getUrlCheckerBlocks(),
@@ -86,6 +87,18 @@ class SeoContentService
             ['type' => 'h3', 'content' => 'Dapatkan Solusi Digital Terbaik'],
             ['type' => 'p', 'content' => 'Sebagai <a href="{route:about}">digital agency</a> berpengalaman, Sekanca menggabungkan keahlian teknis dengan pemahaman mendalam tentang pasar. Selain ' . strtolower($title) . ', kami juga menyediakan <a href="{route:service.index}">layanan digital lainnya</a> yang dapat mendukung transformasi bisnis Anda secara menyeluruh.'],
             ['type' => 'p', 'content' => 'Untuk konsultasi atau informasi lebih lanjut, <a href="{route:contact}">hubungi tim Sekanca Media Digital</a> via WhatsApp. Kami siap membantu Anda mencapai tujuan bisnis.'],
+        ];
+    }
+
+    protected function getCareerBlocks(): array
+    {
+        return [
+            ['type' => 'h2', 'content' => 'Karir di Sekanca Media Digital — Bergabung dengan Tim Digital Agency'],
+            ['type' => 'p', 'content' => 'Sekanca Media Digital membuka peluang karir bagi profesional kreatif di bidang digital marketing, web development, design, dan branding. Lowongan terbaru dapat dilihat dan dilamar langsung melalui <a href="https://www.loker.id/profile/sekanca-media-digital" target="_blank" rel="noopener">profil kami di Loker.id</a>.'],
+            ['type' => 'h3', 'content' => 'Mengapa Bergabung dengan Kami?'],
+            ['type' => 'p', 'content' => 'Kami menawarkan lingkungan kerja kolaboratif, proyek menarik dari berbagai industri, dan kesempatan untuk berkembang. Sebagai <a href="{route:about}">digital agency</a> yang fokus pada transformasi digital, tim Sekanca menggabungkan kreativitas dengan data untuk menghasilkan solusi efektif bagi klien.'],
+            ['type' => 'h3', 'content' => 'Cara Melamar'],
+            ['type' => 'p', 'content' => 'Lihat lowongan yang tersedia dan lamar langsung di <a href="https://www.loker.id/profile/sekanca-media-digital" target="_blank" rel="noopener">Loker.id</a>, atau <a href="{route:contact}">hubungi kami</a> via WhatsApp untuk konsultasi karir dan informasi lebih lanjut.'],
         ];
     }
 

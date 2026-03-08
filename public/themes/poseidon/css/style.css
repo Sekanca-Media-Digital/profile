@@ -8,7 +8,7 @@
 }
 
 body.poseidon-theme {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background: var(--poseidon-light);
     color: var(--poseidon-secondary);
     scroll-behavior: smooth;

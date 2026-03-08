@@ -1,7 +1,7 @@
 {{-- Minimal critical CSS so deferred stylesheets don't cause major FOUC. Hero dimensions prevent CLS (~1.0). --}}
 <style>
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size-adjust:0.48}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size-adjust:0.52}
 .container{width:100%;max-width:1140px;margin-left:auto;margin-right:auto;padding-left:12px;padding-right:12px}
 .navbar{display:flex;flex-wrap:wrap;align-items:center;min-height:56px;padding:.5rem 0}
 .navbar-brand{display:inline-flex;align-items:center;text-decoration:none;color:inherit;font-weight:700}
