@@ -8,15 +8,7 @@
     @include('partials.meta')
     @include('partials.critical-css')
 
-    {{-- JSON-LD WebSite (Google structured data) --}}
-    <script type="application/ld+json">
-    {!! json_encode([
-        '@context' => 'https://schema.org',
-        '@type' => 'WebSite',
-        'name' => $site['name'] ?? config('app.name'),
-        'url' => url('/'),
-    ]) !!}
-    </script>
+    @include('partials.json-ld')
 
     {{-- Defer render-blocking CSS: load async so they don't block LCP (saves ~1,620 ms) --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
