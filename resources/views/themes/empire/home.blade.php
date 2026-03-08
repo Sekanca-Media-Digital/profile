@@ -4,7 +4,7 @@
 <!-- Hero (no AOS here to avoid CLS; content visible from first paint) -->
 <section class="hero text-center">
     <div class="container">
-        <h1 class="display-4">Digital Innovation for Modern Business</h1>
+        <h1 class="display-4">Good Innovation for Modern Business</h1>
         <p class="lead mt-3">Kami membantu bisnis berkembang dengan solusi digital kreatif dan profesional.</p>
         <a href="https://wa.me/{{ config('app.whatsapp') }}" target="_blank" rel="noopener" class="btn btn-primary-custom mt-4">Coba Layanan</a>
     </div>

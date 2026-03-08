@@ -106,9 +106,9 @@ HTML;
         $services = $this->getServicesData();
 
         return [
-            'title' => 'Sekanca Media Digital | Digital Innovation for Modern Business',
+            'title' => 'Sekanca Media Digital | Good Innovation for Modern Business',
             'description' => 'Kami membantu bisnis berkembang dengan solusi digital kreatif dan profesional.',
-            'meta_title' => 'Sekanca Media Digital | Digital Innovation for Modern Business',
+            'meta_title' => 'Sekanca Media Digital | Good Innovation for Modern Business',
             'meta_description' => 'Kami membantu bisnis berkembang dengan solusi digital kreatif dan profesional. Layanan Security as a Service, Digital Marketing, dan Social Media Marketing.',
             'meta_keywords' => 'sekanca media digital, digital agency, web development, digital marketing, branding',
             'about' => [
