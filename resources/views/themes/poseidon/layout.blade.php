@@ -63,9 +63,6 @@
         </div>
     </div>
 </nav>
-<script>
-(function(){var t=document.querySelector('.navbar-toggler'),c=document.querySelector('.navbar-collapse');t&&c&&t.addEventListener('click',function(){c.classList.toggle('show');});})();
-</script>
 
 <main class="content-below-nav">
 @yield('content')

@@ -40,5 +40,24 @@ class AppServiceProvider extends ServiceProvider
         }
 
         View::composer('themes.*.layout', LayoutComposer::class);
+
+        View::composer('errors.*', function ($view) {
+            $siteName = config('app.name');
+            $titles = [
+                'errors.404' => 'Halaman Tidak Ditemukan | ' . $siteName,
+                'errors.500' => 'Terjadi Kesalahan | ' . $siteName,
+                'errors.503' => 'Sedang Pemeliharaan | ' . $siteName,
+            ];
+            $descriptions = [
+                'errors.404' => 'Halaman yang Anda cari tidak ada atau telah dipindahkan.',
+                'errors.500' => 'Server mengalami gangguan. Silakan coba lagi nanti.',
+                'errors.503' => 'Situs sedang dalam pemeliharaan. Kami akan segera kembali.',
+            ];
+            $view->with('meta', [
+                'title' => $titles[$view->name()] ?? 'Error | ' . $siteName,
+                'description' => $descriptions[$view->name()] ?? 'Terjadi kesalahan.',
+                'robots' => 'noindex, follow',
+            ]);
+        });
     }
 }
